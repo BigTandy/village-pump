@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		Bud P.L. Patterson
+		September 30, 2022
+	-->
+
+	<!--
+		All text suronded in square brackets are to be changed by backend / setby configuration
+		*Note the HTML entitys for square brackets are not subject to this!
+	-->
+	<head>
+		<title>[Village Pump]</title>
+		<link href="main.css" rel="stylesheet" type="text/css">
+		<style>
+			body {
+				overflow: hidden;
+			}
+			body > input:focus { 
+				/*outline: darkblue thin dotted; */
+				/*darkgoldenrod*/
+				outline-color: yellow;
+				outline-style: groove;
+			}
+			body > input::placeholder {
+				font-style: italic;
+			}
+
+
+			header {
+				grid-area: 1 / 1 / 1 / -1;
+				
+				height: 100%;
+				width: 100%;
+
+				border-bottom-style: solid;
+
+				display: grid;
+				grid-template-columns: repeat(4, 25%);
+			}
+			header > nav {
+				grid-column-start: 2;
+				grid-column-end: 4;
+
+				display: flex;
+				flex-direction: row;
+
+				align-content: center;
+				justify-content: center;
+				align-items: center;
+
+				border-left-style: dashed;
+				border-right-style: dashed;
+			}
+			header > nav > * {
+				margin-right: 1em;
+			}
+			#MOTD {
+				height: 100%;
+				overflow-y: auto;
+			}
+			#MOTD > * {
+				margin: 0;
+				margin-left: 5px;
+			}
+			#MOTD > p {
+				font-size: small;
+				overflow-y: auto;
+				display: block;
+			}
+			#MOTD > h5 {
+				display: inline-block;
+			}
+			#name-header {
+				height: 100%;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+
+
+
+
+
+
+			#chat {
+				grid-area: 2 / 1 / -1 / 1;
+				height: 100%;
+				width: 100%;
+
+				border-right-style: solid;
+				/* border-bottom: 3px solid black; */
+			}
+			#chat-content > li{
+				color: white;
+				list-style: none;
+			}
+
+			#chat-content > li::before{
+				content: " ";
+			}
+
+
+
+
+			main {
+				grid-area: 2 / 2 / -1 / 5;
+				
+				/*
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(3, 1fr);
+				*/
+
+				height: 100%;
+				width: 100%;
+
+				background-color: lightblue;
+
+				border-right-style: solid;
+				/* border-bottom: 3px solid black; */
+			}
+			main * {
+				color: black;
+			}
+
+			#ann {
+				border: 1px solid;				
+				border: unset;
+				border-bottom: 2px solid black;
+				max-height: 50%;
+				overflow-y: auto;
+			}
+			#ann *, #info * {
+				margin-left: 5px;
+			}
+			#ann section > p {
+				padding-left: 1em;
+			}
+
+			#info {
+				max-height: 50%;
+				overflow-y: auto;
+			}
+
+			#info p {
+				padding-left: 1em;
+			}
+
+
+		</style>
+    </head>
+	<body>
+		<header>
+			<h2 id="name-header">[Village Name]</h2>
+
+			<nav>
+				<!--Links Go Here-->
+			</nav>
+
+			<div id="MOTD">
+				<h5>Message Of The Day:</h5>
+				<p id="motd_message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequatur esse molestiae, facilis laborum enim asperiores accusamus voluptatum, omnis excepturi ratione. Ipsum enim amet eaque obcaecati. Iste atque suscipit optio.</p>
+			</div>
+		</header>
+
+
+
+		<div id="chat">
+			<p style="text-align: center;">&#91;Village Pump Chat&#93;</p>
+				<!--
+					"Village Pump" can be the name of the village pump or the 'p' directly above could just be [Chat] or whatever
+					['Name' Chat] or [Chat] or also the generic [Village Pump Chat] works too
+					
+					What ever you want, but those are how i'd do it
+				-->
+				<ul id="chat-content">
+					<!--
+						li's id should be the message id
+					-->
+					<!--<li>Hello!</li>-->
+				</ul>
+
+		</div>
+		
+
+
+		<input id="chat-box" type="text" style="grid-area: -1 / 1 / -1 / -1; width: 100%; border-right: 3px solid;" placeholder="Chat Input">
+
+
+
+
+		<!--Middle Section-->
+		<main>
+			<div id="ann" class="block">
+				<h1>Announcements: </h1>
+				<!--Anblocks go here-->
+				<!--Anblocks should be type: "Section" not div-->
+				<section class="anblock">
+					<h2>Today:</h2>
+					<p>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel eius dolores, aperiam sed nemo eaque. Suscipit odit aut blanditiis et. In nisi rerum reprehenderit saepe reiciendis voluptatum nobis amet autem.
+					</p>
+				</section>
+
+				<section class="anblock">
+					<h2>Yesterday:</h2>
+					<p>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel eius dolores, aperiam sed nemo eaque. Suscipit odit aut blanditiis et. In nisi rerum reprehenderit saepe reiciendis voluptatum nobis amet autem.
+					</p>
+				</section>
+
+
+				<!--End of Announcments-->
+			</div>
+
+			<div id="info">
+				<!--General Info Section-->
+				<h1>About [Village Name]:</h1>
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, harum quod sequi quas, ea officia vel quia quaerat, nihil laboriosam deleniti possimus reiciendis beatae alias dignissimos accusamus similique ullam neque.
+
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, quasi quae! Vero atque debitis saepe porro consequatur excepturi blanditiis cumque assumenda minima illum. Ipsum esse suscipit pariatur sit, inventore neque!
+
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti cum repudiandae voluptatibus veniam, pariatur nisi porro ipsum hic, amet accusamus libero voluptate suscipit mollitia commodi, perferendis qui minus sapiente dignissimos.
+
+
+				</p>
+			</div>
+		</main>
+
+
+
+
+
+
+
+
+
+
+		<!--
+			This script is here to handle the chatting functions
+		-->
+		<script>
+
+				let textbox = document.getElementById("chat-box");
+				let chatContent = document.getElementById("chat-content");
+
+				/*TO-BE REFACTORED OR REMOVED*/
+				/*!-SANITIZE ON BACKEND*/
+			    textbox.onkeydown = function(e) {
+					if(e.key === "Enter"){
+						submitText(textbox.value)
+						textbox.value = "";
+					}
+                //let charLeft = 6000 - text.length;
+            	}
+
+				/*TO-BE REFACTORED OR REMOVED*/
+				function submitText(datum) {
+					var temp_li = document.createElement("li");
+					temp_li.appendChild(document.createTextNode(datum)) /*Data goes in createTextNode*/
+					chatContent.appendChild(temp_li)
+				}
+
+		</script>
+
+    </body>
+</html>
